@@ -23,8 +23,27 @@
   <body>
 
     <div class="container mt-5">
-      <h1>News</h1>
-    </div>
+      <h1>Top US News</h1>
+      <p>
+        <hr class="my-4">
+            <% for article in @todaysnews %>
+                <h4> <b> <%= article["title"] %> </b></h4>
+                <h3> <%= article["description"] %> <h/3>
+                <h5> <a href=<%= article["url"] %> Read the full article here</a></h5>
+            <% end %>
+      </p>  
+    </div>
+    <div class="container mt-5">
+      <h1>Today's Weather for Evanston, IL</h1>
+      <p>
+        <hr class="my-4">
+            <% for article in @todaysnews %>
+                <h4> <b> <%= article["title"] %> </b></h4>
+                <h3> <%= article["description"] %> <h/3>
+                <h5> <a href=<%= article["url"] %> Read the full article here</a></h5>
+            <% end %>
+      </p>  
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
