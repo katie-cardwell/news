@@ -34,14 +34,18 @@
       </p>  
     </div>
     <div class="container mt-5">
-      <h1>Today's Weather for Evanston, IL</h1>
+      <h1>"Weather for Evanston, IL"</h1>
       <p>
         <hr class="my-4">
-            <% for article in @todaysnews %>
-                <h4> <b> <%= article["title"] %> </b></h4>
-                <h3> <%= article["description"] %> <h/3>
-                <h5> <a href=<%= article["url"] %> Read the full article here</a></h5>
-            <% end %>
+            <h3> It is currently <%= "#{@forecast["current"]["temp"]} %> degrees with <%= #{@forecast["current"]["weather"][0]["description"]}" %> </h3>
+            <h3> "Extended forecast:" </h3>
+             <h5>
+                <% day_number = 1 %>
+                <% for day in @forecast["daily"] %>
+                    <%= "On day #{day_number}, A high of #{day["temp"]["max"]} with #{day["weather"][0]["description"]}" %>
+                    <% day_number = day_number + 1 %>
+                <% end %>
+             </h5>
       </p>  
     </div>
 
